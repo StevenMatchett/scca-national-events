@@ -9,9 +9,9 @@ const getDirectories = source =>
 
 const driverData = {};
 
-getDirectories('data').forEach((year) => {
-    fs.readdirSync(`data/${year}`, { withFileTypes: true }).forEach((event) => {
-        const eventData = JSON.parse(fs.readFileSync(`data/${year}/${event.name}`));
+getDirectories('public').forEach((year) => {
+    fs.readdirSync(`public/${year}`, { withFileTypes: true }).forEach((event) => {
+        const eventData = JSON.parse(fs.readFileSync(`public/${year}/${event.name}`));
         eventData.drivers.forEach((driver) => {
             if (!driverData[driver]) {
                 driverData[driver] = [];
@@ -30,6 +30,6 @@ Object.keys(driverData).forEach((driver) => {
 })
 driverEvents = driverEvents.sort((a,b) => b.events - a.events);
 
-fs.writeFileSync('data/drivers.json', JSON.stringify(driverEvents));
-fs.writeFileSync('data/driversEvents.json', JSON.stringify(driverData));
+fs.writeFileSync('public/drivers.json', JSON.stringify(driverEvents));
+fs.writeFileSync('public/driversEvents.json', JSON.stringify(driverData));
 

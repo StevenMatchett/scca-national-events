@@ -22,8 +22,8 @@ const run = (pdfLocation) => {
     }
     
     function writeFile(year, eventName){
-        if (!fs.existsSync(`data/${year}`)){
-            fs.mkdirSync(`data/${year}`);
+        if (!fs.existsSync(`public/${year}`)){
+            fs.mkdirSync(`public/${year}`);
         }
     
         let views = {};
@@ -39,7 +39,7 @@ const run = (pdfLocation) => {
             drivers: driversName,
             results: drivers
         }
-        fs.writeFileSync(`data/${year}/${eventName}.json`, JSON.stringify(data));
+        fs.writeFileSync(`public/${year}/${eventName}.json`, JSON.stringify(data));
     }
     
     const dateRegex = /(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/\d{4}/;
