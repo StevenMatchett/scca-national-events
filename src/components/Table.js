@@ -25,17 +25,15 @@ export function AutoXTable({eventData, event}) {
     useEffect(() =>{
         if (view === 'PAX'){
             setRows(eventData.results.map(row => {
-                return createData(row.name, row.number, row.time*1, row.class, row.pax);
+                return createData(row.name, row.number, row.time*row.pax, row.class, row.pax);
             }));
         } else if (view === 'RAW'){
-            
             setRows(eventData.results.map(row => {
-                return createData(row.name, row.number, row.time/row.pax, row.class, row.pax);
+                return createData(row.name, row.number, row.time*1, row.class, row.pax);
             }).sort((a, b) => a.time - b.time));
         } else {
-            console.log(view,'view')
             setRows(eventData.results.map(row => {
-                return createData(row.name, row.number, row.time/row.pax, row.class, row.pax);
+                return createData(row.name, row.number, row.time*row.pax, row.class, row.pax);
             }).sort((a, b) => a.time - b.time).filter(row => row.clazz === view));
         }
     }, [view])
