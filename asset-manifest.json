@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/scca-national-events/static/css/main.510fbc99.css",
-    "main.js": "/scca-national-events/static/js/main.c2f9352b.js",
+    "main.js": "/scca-national-events/static/js/main.a0568636.js",
     "static/js/787.95dcf418.chunk.js": "/scca-national-events/static/js/787.95dcf418.chunk.js",
     "index.html": "/scca-national-events/index.html",
     "main.510fbc99.css.map": "/scca-national-events/static/css/main.510fbc99.css.map",
-    "main.c2f9352b.js.map": "/scca-national-events/static/js/main.c2f9352b.js.map",
+    "main.a0568636.js.map": "/scca-national-events/static/js/main.a0568636.js.map",
     "787.95dcf418.chunk.js.map": "/scca-national-events/static/js/787.95dcf418.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.510fbc99.css",
-    "static/js/main.c2f9352b.js"
+    "static/js/main.a0568636.js"
   ]
 }
