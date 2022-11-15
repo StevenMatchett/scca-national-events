@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
-
+import {Link} from 'react-router-dom';
 
 export const SearchByName = () => {
     const [selected, setSelected] = useState(null);
     const [driverData, setDriverData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/driversEvents.json');
+            const response = await fetch('/scca-national-events/driversEvents.json');
             const data = await response.json();
             setDriverData(data);
             const {driver} = document.location.search
@@ -58,7 +58,7 @@ export const SearchByName = () => {
                   <h2>Events</h2>
                   <ul>
                     {selected.map((event) => (
-                        <li><a href={`/event?eventName=${event}`}>{event}</a></li>
+                        <li><Link to={`/scca-national-events/event?eventName=${event}`}>{event}</Link></li>
                     ) )}
         
                   </ul>

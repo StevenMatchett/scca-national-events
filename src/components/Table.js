@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {Dropdown} from './Dropdown';
-
+import {Link} from 'react-router-dom';
 
 
 function createData(name, number, time, clazz, pax) {
@@ -66,7 +66,7 @@ export function AutoXTable({eventData, event}) {
                                 <TableRow style ={ index % 2 ? { background : "#f2f2f2" }: {}    }>
                                     <TableCell align="left">{position}</TableCell>
                                     <TableCell onClick component="th" scope="row">
-                                        <a style={{color:"blue"}}href={`/?driver=${row.name}`}>{row.name}</a>
+                                        <Link style={{color:"blue"}} to={`/scca-national-events/?driver=${row.name}`}>{row.name}</Link>
                                     </TableCell>
                                     <TableCell onClick={()=>{setView(row.clazz)}}style={{color:"blue", cursor:"pointer"}} align="left">{row.clazz}</TableCell>
                                     <TableCell align="left">{row.number}</TableCell>

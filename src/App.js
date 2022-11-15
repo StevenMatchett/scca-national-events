@@ -1,19 +1,20 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom";
 import './App.css';
 import { SearchByName } from './components/NameSearch';
 import {Event} from './components/Event';
 
+console.log("ENV",process.env)
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/scca-national-events/",
     element: <SearchByName />,
   },
   {
-    path: "/event",
+    path: "/scca-national-events/event",
     element: <Event />,
   }
 ]);

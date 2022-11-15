@@ -11,7 +11,7 @@ export const Event = () => {
             .map(p => p.split('='))
             .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
         setEvent(eventName)
-        const url = eventName.replace('-', '/') + '.json'
+        const url = '/scca-national-events/' + eventName.replace('-', '/') + '.json'
         const fetchData = async () => {
             const response = await fetch(url);
             const data = await response.json();
